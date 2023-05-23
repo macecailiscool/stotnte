@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>STOTNTE</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    .prompt {
+      color: lime;
+    }
+
+    .input {
+      color: white;
+      background-color: black;
+      border: none;
+      outline: none;
+      font-family: 'Courier New', Courier, monospace;
+      width: 100%;
+    }
+
+    .output {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <pre>
+ _______  _______  _______  _______  __    _  _______  _______ 
+|       ||       ||       ||       ||  |  | ||       ||       |
+|  _____||_     _||   _   ||_     _||   |_| ||_     _||    ___|
+| |_____   |   |  |  | |  |  |   |  |       |  |   |  |   |___ 
+|_____  |  |   |  |  |_|  |  |   |  |       |  |   |  |    ___|
+ _____| |  |   |  |       |  |   |  |   _   |  |   |  |   |___ 
+|_______|  |___|  |_______|  |___|  |__| |__|  |___|  |_______|
+
+Welcome to the STOTNTE network!
+Type "help" for available commands.
+  </pre>
+
+  <div id="terminal">
+    <p id="output" class="output"></p>
+    <p class="prompt">C:\> <input id="input" class="input" autofocus></p>
+  </div>
+
+  <script>
+    const terminal = document.getElementById("terminal");
+    const inputField = document.getElementById("input");
+    const outputField = document.getElementById("output");
+
+    inputField.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        handleInput(inputField.value);
+      }
+    });
+
+    function handleInput(input) {
+      const command = input.trim().toLowerCase();
+      outputField.innerHTML += `<br><span class="prompt">C:\\> ${input}</span>`;
+      inputField.value = "";
+
+      if (command === "help") {
+        outputField.innerHTML += `
+<br>Available commands:
+<br>help - Show available commands
+<br>dir - List files and directories
+<br>clear - Clear the screen
+<br>exit - Disconnect from STOTNTE`;
+      } else if (command === "dir") {
+        outputField.innerHTML += `
+<br>Files:
+<br>file1.txt
+<br>file2.txt
+<br>file3.txt
+<br>LICENSE
+<br>README.md
+<br>Directories:
+<br>docs
+<br>images
+<br>music`;
+      } else if (command === "clear") {
+        outputField.innerHTML = "";
+      } else if (command === "exit") {
+        terminal.innerHTML = "<pre>Thank you for using STOTNTE. Goodbye!</pre>";
+      } else {
+        outputField.innerHTML += "<br>Command not found. Type 'help' for available commands.";
+      }
+      
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+  </script>
+</body>
+
+</html>
