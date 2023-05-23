@@ -25,9 +25,7 @@ This section discusses preservation strategies and best practices for ensuring t
 Several case studies and success stories of preserving old software for newer hardware are presented in this section. Examples include the successful emulation of historic computer systems, the virtualization of legacy applications in research environments, and the containerization of obsolete software for preservation in digital archives. These case studies demonstrate the practical application and effectiveness of the proposed preservation techniques.
 
 *8. Conclusion*
-Preserving old software for newer hardware is vital for maintaining access to historical data, ensuring the functionality of critical applications, and preserving our technological heritage. Through the use of emulation, virtualization, and containerization, it is possible to bridge the compatibility gap and extend the lifespan of legacy software. However, challenges remain, and continued research, collaboration, and community involvement are necessary to address these issues and safeguard
-
- our digital legacy for future generations.
+Preserving old software for newer hardware is vital for maintaining access to historical data, ensuring the functionality of critical applications, and preserving our technological heritage. Through the use of emulation, virtualization, and containerization, it is possible to bridge the compatibility gap and extend the lifespan of legacy software. However, challenges remain, and continued research, collaboration, and community involvement are necessary to address these issues and safeguard our digital legacy for future generations.
 
 *Acknowledgments*
 The authors would like to thank the contributors and maintainers of open-source projects related to software preservation, whose efforts have been invaluable in advancing the field. This research would not have been possible without their dedication and expertise.
